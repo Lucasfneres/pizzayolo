@@ -14,6 +14,8 @@ public class SequenceManager {
         String numero = bufferedReader.readLine();
         Integer sequence = Integer.valueOf(numero);
 
+        // valueof transforma uma string em um inteiro
+
         bufferedReader.close();
 
 
@@ -21,7 +23,7 @@ public class SequenceManager {
 
         //incrementar o numero
         //persistir o novo numero
-        Integer sequenceNova = sequence +1;
+        Integer sequenceNova = sequence + 1;
         bufferedWriter.write(sequenceNova.toString());
 
         bufferedWriter.flush();

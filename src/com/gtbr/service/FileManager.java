@@ -12,8 +12,8 @@ public class FileManager {
         return bufferedReader;
     }
 
-    public BufferedWriter getEscritor(String diretorio, boolean append) throws FileNotFoundException{
-        FileOutputStream fileOutputStream = new FileOutputStream(diretorio);
+    public BufferedWriter getEscritor(String diretorio, boolean append) throws FileNotFoundException {
+        FileOutputStream fileOutputStream = new FileOutputStream(diretorio,append);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
         BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 

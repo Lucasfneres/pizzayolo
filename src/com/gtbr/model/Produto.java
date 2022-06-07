@@ -18,37 +18,42 @@ public class Produto {
     }
 
 
-    public Integer getId(){
+    public Integer getId() {
         return this.id;
     }
-    public void setId(Integer id){
+
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getNome(){
-        return  this.nome;
+    public String getNome() {
+        return this.nome;
     }
-    public void setNome (String id){
+
+    public void setNome(String id) {
         this.nome = nome;
     }
 
-    public Float getValor(){
+    public Float getValor() {
         return this.valor;
     }
-    public void setValor(Float valor){
+
+    public void setValor(Float valor) {
         this.valor = valor;
     }
-    public Integer getCodigoDeBarras(){
+
+    public Integer getCodigoDeBarras() {
 
         return this.codigoDeBarras;
     }
-    public void setCodigoDeBarras (Integer codigoDeBarras){
+
+    public void setCodigoDeBarras(Integer codigoDeBarras) {
         this.codigoDeBarras = codigoDeBarras;
     }
 
     @Override
-    public String toString(){
-        return id + ":" + nome +":" + valor + ":" + codigoDeBarras + ";";
+    public String toString() {
+        return id + ":" + nome + ":" + valor + ":" + codigoDeBarras + ";";
     }
 
 }
