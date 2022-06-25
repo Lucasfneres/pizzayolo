@@ -16,6 +16,8 @@ public class MenuController {
             System.out.println("[1] Cadastrar novo produto");
             System.out.println("[2] Buscar produto");
             System.out.println("[3] Deletar produto");
+            System.out.println("[4] Listar todos produtos");
+            System.out.println("[5] Atualizar produto");
             System.out.print("Digite sua opção: ");
             int opcao = scanner.nextInt();
             ProdutoController produtoController = new ProdutoController();
@@ -25,13 +27,25 @@ public class MenuController {
                     Produto produtoCadastrado = produtoController.cadastraProduto();
                     break;
                 }
+
                 case 2:{
                     Produto produto = produtoController.buscaProduto();
                     System.out.println(produto.toString());
                     break;
                 }
+
                 case 3:{
                     produtoController.deletaProduto();
+                    break;
+                }
+
+                case 4:{
+                    produtoController.listarProdutos();
+                    break;
+                }
+                case 5:{
+                    produtoController.atualizaProduto();
+                    break;
                 }
             }
 

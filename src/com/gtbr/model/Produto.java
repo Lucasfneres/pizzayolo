@@ -18,11 +18,11 @@ public class Produto {
     }
 
 
-    public Integer getId() {
+    public Integer getId () {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId (Integer id) {
         this.id = id;
     }
 
@@ -30,7 +30,7 @@ public class Produto {
         return this.nome;
     }
 
-    public void setNome(String id) {
+    public void setNome (String nome) {
         this.nome = nome;
     }
 

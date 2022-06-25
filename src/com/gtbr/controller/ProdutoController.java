@@ -5,6 +5,7 @@ import com.gtbr.model.Produto;
 
 import java.io.IOException;
 import java.sql.SQLOutput;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProdutoController {
@@ -30,7 +31,7 @@ public class ProdutoController {
         Integer codigoDeBarras = scanner.nextInt();
 
         Produto produto = new Produto(1, nome, valor, codigoDeBarras);
-        produtoDAO.persistirProduto(produto);
+        produtoDAO.persistirProduto(produto,false);
 
         return produto;
 
@@ -52,6 +53,50 @@ public class ProdutoController {
         String nome = scanner.next();
         produtoDAO.deletaProduto(nome);
     }
+    public void listarProdutos() throws IOException {
+        produtoDAO.listarProdutos();
+        List<Produto> listaDeProdutos = produtoDAO.listarProdutos();
+
+        for (Produto produto : listaDeProdutos) {
+            System.out.println(produto);
+
+        }
+    }
+
+    public void atualizaProduto()throws IOException{
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Que produto vc deseja att? ");
+        String nomeDoProduto = scanner.next();
+
+        Produto produto = produtoDAO.buscarProduto(nomeDoProduto);
+
+        if (produto == null){
+            return;
+        }
+
+        System.out.println("Qual atributo você deseja atualizar?");
+        System.out.println(" [1] - Nome (atual:  "+ produto.getNome()+")");
+        System.out.println(" [2] - Valor (atual:  "+ produto.getValor()+")");
+        System.out.println(" [3] - Codigo (atual:  "+produto.getCodigoDeBarras()+ ")");
+
+        Integer atributoEscolhido = scanner.nextInt();
+
+        System.out.println("Para qual valor ira atualizar? ");
+        String valorAtualizado = scanner.next();
+
+        produtoDAO.atualizaProduto(atributoEscolhido, valorAtualizado, produto);
+
+
+
+
+
+
+
+
+
+    }
+
+    //public atualizaProdutos() throws IOException{}
 
 
 }
